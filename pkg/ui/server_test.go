@@ -124,6 +124,7 @@ func TestCleanExtractedTask(t *testing.T) {
 		expected string
 	}{
 		{"set an alarm for", "5 minutes", "Quick Reminder (5 minutes)"},
+		{"5 minutes", "5 minutes", "Quick Reminder (5 minutes)"},
 		{"set a reminder for", "10m", "Quick Reminder (10m)"},
 		{"remind me to call mom", "7pm", "call mom"},
 		{"call mom", "7pm", "call mom"},

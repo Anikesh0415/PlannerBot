@@ -987,8 +987,8 @@ func cleanExtractedTask(task, rawTime, originalMsg string) string {
 		}
 	}
 
-	// If empty or purely a generic token, give it a clean descriptive title
-	if t == "" || lower == "alarm" || lower == "reminder" || lower == "timer" || lower == "task" {
+	// If empty, identical to the time expression, or purely a generic token, give it a clean descriptive title
+	if t == "" || strings.EqualFold(t, strings.TrimSpace(rawTime)) || lower == "alarm" || lower == "reminder" || lower == "timer" || lower == "task" {
 		if rawTime != "" {
 			return fmt.Sprintf("Quick Reminder (%s)", rawTime)
 		}

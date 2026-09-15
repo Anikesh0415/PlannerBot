@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -e
 
 echo "======================================================================"
@@ -19,8 +19,15 @@ if [ ! -f "$MODEL_FILE" ]; then
 fi
 
 if [ ! -f "./PlannerBot" ]; then
-    echo "[*] Compiling PlannerBot binary..."
-    go build -o PlannerBot ./cmd/planner
+    if which go > /dev/null 2>&1; then
+        echo "[*] Go compiler detected. Compiling PlannerBot binary..."
+        go build -o PlannerBot ./cmd/planner
+    else
+        echo "[*] PlannerBot binary missing and Go not installed."
+        echo "[*] Downloading pre-compiled binary from GitHub Releases..."
+        curl -L -o PlannerBot https://github.com/Anikesh0415/PlannerBot/releases/download/v0.3.0/PlannerBot-linux-amd64 || true
+        chmod +x PlannerBot 2>/dev/null || true
+    fi
 fi
 
 echo "[*] Starting PlannerBot..."

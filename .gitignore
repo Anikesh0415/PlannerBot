@@ -6,7 +6,9 @@
 *.dylib
 bin/
 /PlannerBot
+/PlannerBot-*
 /planner
+*.zip
 
 # Local databases and user ledgers
 *.db

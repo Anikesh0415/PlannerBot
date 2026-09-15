@@ -28,16 +28,22 @@ if not exist "%MODEL_FILE%" (
 )
 
 if not exist "PlannerBot.exe" (
-    echo [*] Building PlannerBot binary...
     where go >nul 2>nul
-    if errorlevel 1 (
-        echo [!] Error: Go compiler is not installed and PlannerBot.exe is missing.
-        pause
-        exit /b 1
+    if not errorlevel 1 (
+        echo [*] Go compiler detected. Building PlannerBot binary...
+        go build -o PlannerBot.exe ./cmd/planner
+    ) else (
+        echo [*] PlannerBot.exe missing and Go not installed.
+        echo [*] Downloading pre-compiled PlannerBot.exe from GitHub Releases...
+        set EXE_URL=https://github.com/Anikesh0415/PlannerBot/releases/download/v0.3.0/PlannerBot.exe
+        curl.exe -L -o "PlannerBot.exe" "!EXE_URL!"
+        if errorlevel 1 (
+            powershell -Command "Invoke-WebRequest -Uri '!EXE_URL!' -OutFile 'PlannerBot.exe'"
+        )
     )
-    go build -o PlannerBot.exe ./cmd/planner
-    if errorlevel 1 (
-        echo [!] Error: Compilation failed.
+    if not exist "PlannerBot.exe" (
+        echo [!] Error: Could not obtain PlannerBot.exe.
+        echo [!] You can manually download it from: https://github.com/Anikesh0415/PlannerBot/releases
         pause
         exit /b 1
     )

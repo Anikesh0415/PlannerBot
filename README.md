@@ -1,4 +1,4 @@
-﻿# PlannerBot: Sovereign Cognitive Engine (v0.3.0)
+# PlannerBot: Sovereign Cognitive Engine (v0.3.0)
 
 > **Private, air-gapped, on-device AI daily planner and focus strategist designed to run on 7-year-old hardware with as little as 4GB RAM.**
 
@@ -6,8 +6,21 @@
 [![Go Version](https://img.shields.io/badge/Go-1.25+-00ADD8?logo=go)](https://go.dev)
 [![Architecture](https://img.shields.io/badge/Architecture-Air--Gapped%20Local-emerald)](#)
 [![RAM Footprint](https://img.shields.io/badge/RAM-~380MB-brightgreen)](#)
+[![GitHub Release](https://img.shields.io/github/v/release/Anikesh0415/PlannerBot)](https://github.com/Anikesh0415/PlannerBot/releases)
 
 PlannerBot is an autonomous, offline-first productivity system that integrates constrained on-device AI inference, natural language task scheduling, digital wellbeing audit, real-time alert chimes, and encrypted local P2P synchronization without relying on any external cloud services.
+
+---
+
+## 📥 Direct Downloads (No Go Compiler Required)
+
+For regular users and friends who do **not** have the Go development environment installed:
+
+- **[📦 Download Windows Package (ZIP)](https://github.com/Anikesh0415/PlannerBot/releases/download/v0.3.0/PlannerBot-v0.3.0-windows-amd64.zip)** *(Recommended: Includes `PlannerBot.exe` + `start.bat`)*
+- **[🚀 Download Standalone Windows Executable (PlannerBot.exe)](https://github.com/Anikesh0415/PlannerBot/releases/download/v0.3.0/PlannerBot.exe)**
+- **[🐧 Download Linux AMD64 Binary](https://github.com/Anikesh0415/PlannerBot/releases/download/v0.3.0/PlannerBot-linux-amd64)**
+
+*Simply extract the ZIP and double-click `start.bat` (or run `PlannerBot.exe`)!*
 
 ---
 
